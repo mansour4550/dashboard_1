@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -64,120 +65,127 @@
         </div>
       </div>
 
-      <!-- Charts Section -->
-      <div class="charts">
-        <div class="chart-card">
-          <h3>Number of Candidates</h3>
-          <canvas id="candidatesChart" width="400" height="200"></canvas>
-          <div class="chart-legend">
-            <div class="legend-item"><span class="legend-dot females"></span> Females: 262.2</div>
-            <div class="legend-item"><span class="legend-dot males"></span> Males: 262.6</div>
+      <!-- Charts and Job Posts Row -->
+      <div class="charts-and-posts">
+        <!-- Charts Section -->
+        <div class="charts">
+          <div class="chart-card">
+            <h3>Number of Candidates</h3>
+            <canvas id="candidatesChart" width="400" height="200"></canvas>
+            <div class="chart-legend">
+              <div class="legend-item"><span class="legend-dot females"></span> Females: 262.2</div>
+              <div class="legend-item"><span class="legend-dot males"></span> Males: 262.6</div>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Number of Registered</h3>
+            <canvas id="registeredChart" width="400" height="200"></canvas>
+            <div class="chart-legend">
+              <div class="legend-item"><span class="legend-dot stay"></span> Stay: 100</div>
+              <div class="legend-item"><span class="legend-dot source"></span> Source: 262.6</div>
+              <div class="legend-item"><span class="legend-dot turn"></span> Turn: 450.16</div>
+            </div>
           </div>
         </div>
-        <div class="chart-card">
-          <h3>Number of Registered</h3>
-          <canvas id="registeredChart" width="400" height="200"></canvas>
-          <div class="chart-legend">
-            <div class="legend-item"><span class="legend-dot stay"></span> Stay: 262.2</div>
-            <div class="legend-item"><span class="legend-dot source"></span> Source: 262.6</div>
-            <div class="legend-item"><span class="legend-dot turn"></span> Turn: 450.16</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Recent Job Posts Table -->
-      <div class="job-posts">
-        <h3>Recent Job Posts</h3>
-        <div class="sort">Sort by: <select><option>City</option></select></div>
-        <table>
-          <thead>
-            <tr>
-              <th>Job Title</th>
-              <th>Category</th>
-              <th>Openings</th>
-              <th>Applications</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>UI/UX Designer</td>
-              <td>Full Time</td>
-              <td>12</td>
-              <td>125</td>
-              <td><span class="status active">Active</span></td>
-            </tr>
-            <tr>
-              <td>Full Stack Dev</td>
-              <td>Full Time</td>
-              <td>08</td>
-              <td>100</td>
-              <td><span class="status expired">Expired</span></td>
-            </tr>
-            <tr>
-              <td>DevOps</td>
-              <td>Internship</td>
-              <td>12</td>
-              <td>05</td>
-              <td><span class="status active">Active</span></td>
-            </tr>
-            <tr>
-              <td>Android Dev</td>
-              <td>Full Time</td>
-              <td>04</td>
-              <td>45</td>
-              <td><span class="status active">Active</span></td>
-            </tr>
-            <tr>
-              <td>iOS Developer</td>
-              <td>Full Time</td>
-              <td>18</td>
-              <td>36</td>
-              <td><span class="status expired">Expired</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- Recent Job Posts Table -->
+        <div class="job-posts">
+          <h3>Recent Job Posts</h3>
+          <div class="sort">Sort by: <select><option>City</option></select></div>
+          <table>
+            <thead>
+              <tr>
+                <th>Job Title</th>
+                <th>Category</th>
+                <th>Openings</th>
+                <th>Applications</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>UI/UX Designer</td>
+                <td>Full Time</td>
+                <td>12</td>
+                <td>125</td>
+                <td><span class="status active">Active</span></td>
+              </tr>
+              <tr>
+                <td>Full Stack Dev</td>
+                <td>Full Time</td>
+                <td>08</td>
+                <td>100</td>
+                <td><span class="status expired">Expired</span></td>
+              </tr>
+              <tr>
+                <td>DevOps</td>
+                <td>Internship</td>
+                <td>12</td>
+                <td>05</td>
+                <td><span class="status active">Active</span></td>
+              </tr>
+              <tr>
+                <td>Android Dev</td>
+                <td>Full Time</td>
+                <td>04</td>
+                <td>45</td>
+                <td><span class="status active">Active</span></td>
+              </tr>
+              <tr>
+                <td>iOS Developer</td>
+                <td>Full Time</td>
+                <td>18</td>
+                <td>36</td>
+                <td><span class="status expired">Expired</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 
   <script>
-    // Bar Chart - Number of Candidates
+    // Number of Candidates Chart (Donut)
     const candidatesCtx = document.getElementById('candidatesChart').getContext('2d');
     new Chart(candidatesCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Females', 'Males'],
-            datasets: [{
-                label: 'Candidates',
-                data: [262.2, 262.6],
-                backgroundColor: ['#FF6384', '#36A2EB']
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
+      type: 'doughnut',
+      data: {
+        labels: ['Females', 'Males'],
+        datasets: [{
+          data: [262.2, 262.6],
+          backgroundColor: ['#ff6384', '#36a2eb'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '70%',
+        plugins: {
+          legend: { display: false }
         }
+      }
     });
 
-    // Pie Chart - Number of Registered
+    // Number of Registered Chart (Donut)
     const registeredCtx = document.getElementById('registeredChart').getContext('2d');
     new Chart(registeredCtx, {
-        type: 'pie',
-        data: {
-            labels: ['Stay', 'Source', 'Turn'],
-            datasets: [{
-                data: [100, 262.6, 450.16],
-                backgroundColor: ['#4BC0C0', '#FFCE56', '#FF6384']
-            }]
-        },
-        options: {
-            responsive: true
+      type: 'doughnut',
+      data: {
+        labels: ['Stay', 'Source', 'Turn'],
+        datasets: [{
+          data: [100, 262.6, 450.16],
+          backgroundColor: ['#4bc0c0', '#ffce56', '#ff6384'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '70%',
+        plugins: {
+          legend: { display: false }
         }
+      }
     });
   </script>
 </body>
