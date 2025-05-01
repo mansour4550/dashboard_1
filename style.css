@@ -18,7 +18,7 @@ body::before {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px; /* Height of the mountain-like pattern */
+  height: 140px; /* Increased height of the mountain-like pattern for more visibility */
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23F5F9FF" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,229.3C672,245,768,267,864,245.3C960,224,1056,160,1152,149.3C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
   background-size: cover;
   z-index: -1; /* Ensure it stays behind the content */
@@ -114,7 +114,7 @@ h1 {
 
 .card {
   background-color: white;
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   flex: 1;
@@ -131,13 +131,13 @@ h1 {
 .card h3 {
   font-size: 16px;
   color: #666;
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Reduced margin */
 }
 
 .card p {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 3px; /* Reduced margin */
 }
 
 .trend {
@@ -157,9 +157,10 @@ h1 {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-bottom: 20px; /* Add margin to create space for the wave */
 }
 
-/* Charts */
+/* Charts - MODIFIED FOR SHORTER HEIGHT */
 .charts {
   display: flex;
   gap: 20px;
@@ -169,11 +170,13 @@ h1 {
 
 .chart-card {
   background-color: white;
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   border-radius: 8px;
   flex: 1;
   min-width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Reduced overall height */
+  max-height: 280px; /* Set maximum height */
 }
 
 .chart-card:hover {
@@ -181,32 +184,39 @@ h1 {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
+.chart-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px; /* Reduced margin */
+  text-align: center;
+}
+
 .chart-card canvas {
-  width: 50% !important;
-  height: auto !important;
+  width: 130px !important; /* Smaller chart width */
+  height: 130px !important; /* Smaller chart height */
   display: block;
   margin: 0 auto;
 }
 
 .chart-legend {
-  margin-top: 10px;
+  margin-top: 8px; /* Reduced margin */
   display: flex;
-  gap: 20px;
+  gap: 12px; /* Reduced gap */
   justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 5px;
+  gap: 5px; /* Reduced gap */
+  margin-bottom: 3px; /* Reduced margin */
   color: #555;
-  font-size: 14px;
+  font-size: 12px; /* Smaller font */
 }
 
 .legend-dot {
-  width: 12px;
-  height: 12px;
+  width: 10px; /* Smaller dot */
+  height: 10px; /* Smaller dot */
   border-radius: 50%;
   display: inline-block;
 }
@@ -234,7 +244,7 @@ h1 {
 /* Job Posts Table */
 .job-posts {
   background: white;
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   flex: 1;
@@ -243,13 +253,13 @@ h1 {
 }
 
 .job-posts h3 {
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Reduced margin */
   font-size: 16px;
   color: #333;
 }
 
 .sort {
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Reduced margin */
   text-align: right;
 }
 
@@ -262,7 +272,7 @@ h1 {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 13px; /* Slightly smaller font */
 }
 
 thead {
@@ -270,7 +280,7 @@ thead {
 }
 
 th, td {
-  padding: 12px 15px;
+  padding: 10px 12px; /* Reduced padding */
   text-align: left;
   border-bottom: 1px solid #eee;
 }
@@ -290,9 +300,9 @@ tbody tr:hover {
 }
 
 .status {
-  padding: 5px 10px;
+  padding: 4px 8px; /* Reduced padding */
   border-radius: 15px;
-  font-size: 12px;
+  font-size: 11px; /* Smaller font */
   font-weight: 500;
 }
 
