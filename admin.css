@@ -2,31 +2,39 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #E6F0FA; /* Light blue background */
-  }
-  
-  .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
   }
   
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
   .header {
     background-color: #F5F7FA; /* Light gray header */
     padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #E5E7EB;
   }
   
   .home-icon {
     color: #6B7280; /* Gray icon */
     font-size: 24px;
     text-decoration: none;
+    margin-right: 10px;
   }
   
-  .settings-header {
-    background-color: #F5F7FA; /* Light gray header */
-    padding: 15px 20px;
+  .header h1 {
     font-size: 24px;
-    font-weight: bold;
-    color: #1F2937; /* Dark gray text */
+    font-weight: 600;
+    color: #1F2937;
+    margin: 0;
   }
   
   .nav-tab {
@@ -35,6 +43,8 @@ body {
     background-color: #1E40AF; /* Dark blue tab */
     padding: 10px 20px;
     color: #FFFFFF; /* White text */
+    font-size: 16px;
+    font-weight: 500;
   }
   
   .nav-tab .bi-person-circle {
@@ -42,21 +52,20 @@ body {
     font-size: 20px;
   }
   
-  .nav-tab-text {
-    font-size: 16px;
-    font-weight: 500;
+  .nav-tab.active {
+    border-bottom: 2px solid #3B82F6; /* Blue bottom border for active state */
   }
   
   .content {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 20px;
+    background-color: #E6F0FA;
   }
   
   .settings-form {
-    background-color: #FFFFFF; /* White form background */
+    background-color: #FFFFFF; /* White card background */
     padding: 20px;
     border-radius: 8px;
     width: 100%;
@@ -67,7 +76,7 @@ body {
   .form-title {
     font-size: 18px;
     font-weight: 600;
-    color: #1F2937; /* Dark gray text */
+    color: #1E40AF; /* Blue title text */
     margin-bottom: 20px;
   }
   
@@ -78,7 +87,7 @@ body {
   .form-control {
     width: 100%;
     padding: 10px;
-    border: 1px solid #D1D5DB; /* Light gray border */
+    border: 1px solid #E5E7EB; /* Light gray border */
     border-radius: 4px;
     font-size: 14px;
     color: #1F2937;
@@ -107,12 +116,4 @@ body {
   
   .save-button:hover {
     background-color: #4AD9C3; /* Slightly darker cyan on hover */
-  }
-  
-  .footer {
-    background-color: #F5F7FA; /* Light gray footer */
-    padding: 10px 20px;
-    text-align: center;
-    color: #6B7280; /* Gray text */
-    font-size: 14px;
   }
