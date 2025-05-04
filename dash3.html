@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRecruit Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="top-nav">
+                <div class="logo-container">
+                    <div class="logo">AIRECRUIT</div>
+                    <div class="tagline">Recruit Intelligently</div>
+                </div>
+                <ul>
+                    <li><i class="bi bi-house-door"></i> Dashboard</li>
+                    <li><i class="bi bi-person"></i> Candidates</li>
+                    <li><i class="bi bi-briefcase"></i> Offers</li>
+                    <li><i class="bi bi-list"></i> Applications</li>
+                </ul>
+            </div>
+            <div class="bottom-nav">
+                <ul>
+                    <li><i class="bi bi-gear"></i> Settings</li>
+                    <li><i class="bi bi-box-arrow-right"></i> Log Out</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="sort-dropdown">
+                    Sort: <select>
+                        <option>Last week</option>
+                        <option>This week</option>
+                    </select>
+                </div>
+                <div class="user-info">
+                    <span>Esther Howard</span>
+                    <img src="https://via.placeholder.com/30" alt="User Avatar" class="avatar">
+                    <span>esther.howard@gmail.com</span>
+                </div>
+            </div>
+
+            <!-- Dashboard Section -->
+            <div class="dashboard">
+                <h2>Dashboard</h2>
+                <p>Welcome back, Esther</p>
+
+                <!-- Stats Cards -->
+                <div class="stats-container">
+                    <div class="stat-card" id="candidates">
+                        <div class="stat-content">
+                            <div class="stat-left">
+                                <h3>Candidates</h3>
+                                <div class="stat-number">250</div>
+                                <div class="legend">
+                                    <span class="legend-item female">Female</span>
+                                    <span class="legend-item male">Male</span>
+                                </div>
+                            </div>
+                            <div class="stat-right">
+                                <div class="pie-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card" id="accepted">
+                        <div class="stat-content">
+                            <div class="stat-left">
+                                <h3>Accepted</h3>
+                                <div class="stat-number">52</div>
+                            </div>
+                            <div class="stat-right">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card" id="pending">
+                        <div class="stat-content">
+                            <div class="stat-left">
+                                <h3>Pending</h3>
+                                <div class="stat-number">7</div>
+                            </div>
+                            <div class="stat-right">
+                                <i class="bi bi-clock"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card" id="dailyviews">
+                        <h3>Daily Profile Views</h3>
+                        <div class="bar-chart">
+                            <div class="bar" style="height: 60%;"></div>
+                            <div class="bar" style="height: 80%;"></div>
+                            <div class="bar" style="height: 40%;"></div>
+                            <div class="bar" style="height: 50%;"></div>
+                            <div class="bar" style="height: 70%;"></div>
+                            <div class="bar" style="height: 30%;"></div>
+                            <div class="bar" style="height: 20%;"></div>
+                        </div>
+                        <div class="bar-labels">
+                            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                        </div>
+                        <p>Last week</p>
+                    </div>
+                    <div class="stat-card" id="qa">
+                        <h3>Q & A</h3>
+                        <div class="qa-stats">
+                            <div class="qa-number blue">300</div>
+                            <div class="qa-number light">200</div>
+                        </div>
+                        <p>Number of question asked | Number of question answered</p>
+                    </div>
+                </div>
+
+                <!-- Lower Section -->
+                <div class="lower-section">
+                    <!-- Recent Messages -->
+                    <div class="recent-messages">
+                        <h2>Recent messages</h2>
+                        <div class="message-list">
+                            <div class="message-list-header">
+                                <button class="see-all">See all</button>
+                            </div>
+                            <div class="message">
+                                <div class="avatar-container">
+                                    <img src="https://via.placeholder.com/40" alt="Albert Flores" class="message-avatar">
+                                    <span class="online-dot"></span>
+                                </div>
+                                <div class="message-content">
+                                    <span class="user-name">Albert Flores</span>
+                                    <span class="message-text">Is training provided?</span>
+                                    <div class="message-meta">
+                                        <span class="status answered">Answered</span>
+                                        <span class="time">12:45</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message">
+                                <div class="avatar-container">
+                                    <img src="https://via.placeholder.com/40" alt="Jacob Jones" class="message-avatar">
+                                    <span class="online-dot"></span>
+                                </div>
+                                <div class="message-content">
+                                    <span class="user-name">Jacob Jones</span>
+                                    <span class="message-text">When can I expect feedback?</span>
+                                    <div class="message-meta">
+                                        <span class="status pending">Pending</span>
+                                        <span class="time">10:04</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message">
+                                <div class="avatar-container">
+                                    <img src="https://via.placeholder.com/40" alt="Wade Warren" class="message-avatar">
+                                    <span class="online-dot"></span>
+                                </div>
+                                <div class="message-content">
+                                    <span class="user-name">Wade Warren</span>
+                                    <span class="message-text">What is the team size?</span>
+                                    <div class="message-meta">
+                                        <span class="status pending">Pending</span>
+                                        <span class="time">Yesterday</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message">
+                                <div class="avatar-container">
+                                    <img src="https://via.placeholder.com/40" alt="Theresa Webb" class="message-avatar">
+                                    <span class="online-dot"></span>
+                                </div>
+                                <div class="message-content">
+                                    <span class="user-name">Theresa Webb</span>
+                                    <span class="message-text">Is travel required for this position?</span>
+                                    <div class="message-meta">
+                                        <span class="status answered">Answered</span>
+                                        <span class="time">17:14</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   <!-- Top Scorers Section -->
+  <div class="top-scorers">
+    <h3>Top Scorers</h3>
+    <div class="top-scorer-container">
+      <div class="top-scorer-cards">
+        <div class="top-scorer-card">
+          <img src="/api/placeholder/50/50" alt="Jane Cooper" class="top-scorer-avatar" />
+          <div class="top-scorer-name">Jane Cooper</div>
+          <div class="top-scorer-title">Cloud Engineer</div>
+          <div class="top-scorer-percentage">99.99%</div>
+          <div class="top-scorer-rank">1st</div>
+        </div>
+        <div class="top-scorer-card">
+          <img src="/api/placeholder/50/50" alt="Eleanor Pena" class="top-scorer-avatar" />
+          <div class="top-scorer-name">Eleanor Pena</div>
+          <div class="top-scorer-title">Cybersecurity Specialist</div>
+          <div class="top-scorer-percentage">99.76%</div>
+          <div class="top-scorer-rank">2nd</div>
+        </div>
+        <div class="top-scorer-card">
+          <img src="/api/placeholder/50/50" alt="Devon Lane" class="top-scorer-avatar" />
+          <div class="top-scorer-name">Devon Lane</div>
+          <div class="top-scorer-title">Web Developer</div>
+          <div class="top-scorer-percentage">99.50%</div>
+          <div class="top-scorer-rank">3rd</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>      
+</body>
+</html>

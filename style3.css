@@ -2,136 +2,651 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  body {
-    background-color: #e6f7fa;
-  }
-  
-  .container {
-    max-width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
     height: 100vh;
+    background: #E6F0FA;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: #1a73e8;
+    color: white;
+    height: 100%;
+    padding: 15px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #0072bc;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .header {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    background-color: #ffffff;
-  }
-  
-  .home-icon {
-    color: #0072bc;
-    font-size: 24px;
-  }
-  
-  .settings-header {
-    padding: 16px 24px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #0056a4;
-    background-color: #e6f7fa;
-  }
-  
-  .nav-tab {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 24px;
-    background-color: #055695;
-    color: white;
-    width: 1961px;
-    height: 71px;
-    border-bottom: 3px solid #ffffff;
-  }
-  
-  .nav-tab i {
+    justify-content: space-between;
+}
+
+.logo-container {
+    margin-bottom: 30px;
+}
+
+.logo {
     font-size: 20px;
-  }
-  
-  .nav-tab-text {
-    position: relative;
-    font-size: 18px;
-    font-family: poppins, sans-serif;
-  }
-  .nav-tab-text::after {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #00d4ff; /* Bright cyan for visibility */
-    border-radius: 2px;}
-  .content {
-    padding: 40px;
-    flex-grow: 1;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tagline {
+    font-size: 10px;
+    color: #b3e5fc;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 15px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 14px;
+}
+
+.sidebar ul li:hover {
+    background-color: #1557b0;
+    transform: translateX(5px);
+    border-radius: 50px;
+    padding: 15px 20px;
+}
+
+.sidebar .bottom-nav {
+    margin-bottom: 15px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sort-dropdown {
+    font-size: 14px;
+}
+
+.sort-dropdown select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.user-info .avatar {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.dashboard h2 {
+    font-size: 24px;
+    color: #1a73e8;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.dashboard p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "candidates accepted pending"
+        "dailyviews dailyviews qa";
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.stat-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    height: auto;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+#candidates { grid-area: candidates; }
+#accepted { grid-area: accepted; }
+#pending { grid-area: pending; }
+#dailyviews { grid-area: dailyviews; }
+#qa { grid-area: qa; }
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.stat-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.stat-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-right {
+    display: flex;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 34px;
+    font-weight: 600;
+    color: #1a73e8;
+}
+
+.legend {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend-item::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-item.female::before {
+    background: #1a73e8;
+}
+
+.legend-item.male::before {
+    background: #b3e5fc;
+}
+
+.pie-chart {
+    width: 60px;
+    height: 60px;
+    background: conic-gradient(#1a73e8 70%, #b3e5fc 30%);
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.stat-right i {
+    font-size: 36px;
+    color: #1a73e8;
+}
+
+/* For Accepted & Pending cards */
+.stat-right .circle-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #1a73e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a73e8;
+    font-size: 20px;
+}
+
+/* Daily Profile Views */
+.bar-chart {
+    display: flex;
+    gap: 10px;
+    height: 80px;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+
+.bar {
+    flex: 1;
+    background: #1a73e8;
+    border-radius: 5px 5px 0 0;
+    min-width: 30px;
+}
+
+.bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.daily-views-info {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Q&A Section */
+.qa-stats {
     display: flex;
     justify-content: center;
-  }
-  
-  .settings-form {
-    width: 100%;
-    max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 8px;
-    padding: 30px;
-  }
-  
-  .form-title {
-    color: #0072bc;
+    gap: 30px;
+    margin: 15px 0;
+}
+
+.qa-number {
     font-size: 20px;
-    margin-bottom: 24px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-  }
-  
-  .button-container {
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-  }
-  
-  .save-button {
-    background-color: #00d4ff;
-    color: black;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  .save-button:hover {
-    background-color: #00bcd4;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-  }
-  
-  .footer {
-    height: 40px;
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
-    padding: 0 20px;
+    justify-content: center;
+}
+
+.qa-number.blue {
+    background: #1a73e8;
+    color: white;
+}
+
+.qa-number.light {
+    background: #b3e5fc;
+    color: #1a73e8;
+}
+
+.qa-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     font-size: 14px;
-    color: #aaa;
-  }
+    color: #666;
+}
+
+.qa-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.qa-legend-item::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.qa-legend-item.asked::before {
+    background: #1a73e8;
+}
+
+.qa-legend-item.answered::before {
+    background: #b3e5fc;
+}
+
+/* Lower Section */
+.lower-section {
+    display: flex;
+    gap: 20px;
+}
+
+.recent-messages {
+    flex: 2;
+}
+
+.recent-messages h2,
+.top-scorers h2 {
+    font-size: 20px;
+    color: #1a73e8;
+    margin-bottom: 10px;
+}
+
+.message-list {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.message-list-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.avatar-container {
+    position: relative;
+}
+
+.message-avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.online-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.message-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #1a73e8;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+.message-text {
+    color: #666;
+    font-size: 14px;
+    flex: 1;
+}
+
+.message-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status {
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+
+.answered {
+    background: #e0f7fa;
+    color: #00acc1;
+}
+
+.pending {
+    background: #fff3e0;
+    color: #ff9800;
+}
+
+.time {
+    color: #666;
+    font-size: 12px;
+}
+
+.see-all {
+    background: white;
+    color: #1a73e8;
+    border: 1px solid #1a73e8;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Top Scorer Section */
+.top-scorer-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.top-scorer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.top-scorer-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a73e8;
+    font-family: poppins;
+}
+
+.top-scorer-header .date {
+    font-size: 12px;
+    color: #999;
+}
+
+.top-scorer-cards {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.top-scorer-card {
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    color: #333;
+    position: relative;
+}
+
+.top-scorer-card:nth-child(1) {
+    background-color: #f0f7ff;
+}
+
+.top-scorer-card:nth-child(2) {
+    background-color: #f0f7ff;
+}
+
+.top-scorer-card:nth-child(3) {
+    background-color: #f0f7ff;
+}
+
+.top-scorer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.top-scorer-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    text-align: center;
+    color: #1a73e8;
+}
+
+.top-scorer-title {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.top-scorer-percentage {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a73e8;
+}
+
+.top-scorer-rank {
+    background-color: #1a73e8;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 0;
+    font-size: 12px;
+    font-weight: 600;
+    width: 80%;
+    text-align: center;
+}
+
+/* Add section for Recent Messages similar to the image */
+.recent-messages-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.recent-messages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.recent-messages-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a73e8;
+}
+
+.see-all-btn {
+    background-color: white;
+    border: 1px solid #1a73e8;
+    color: #1a73e8;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.message-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.message-item:last-child {
+    border-bottom: none;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.message-user {
+    font-weight: 600;
+    color: #1a73e8;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+.message-content {
+    flex: 1;
+    font-size: 14px;
+    color: #555;
+}
+
+.message-status {
+    margin-left: 10px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.message-status.answered {
+    background-color: #e0f7fa;
+    color: #00acc1;
+}
+
+.message-status.pending {
+    background-color: #fff3e0;
+    color: #ff9800;
+}
+
+.message-time {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #999;
+    min-width: 60px;
+    text-align: right;
+}
+
+/* Additional styles for the male/female percentage display */
+.percentage-display {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.percentage {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.percentage-label {
+    font-size: 14px;
+    color: #666;
+}
